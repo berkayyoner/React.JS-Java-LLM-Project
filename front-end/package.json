@@ -43,5 +43,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+
+    "dev": "npm run start",
+    "prod": "npm run build && npx serve -s build -l 5000"
   }
 }

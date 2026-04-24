@@ -70,7 +70,7 @@
   align-items: start;
 }
 
-/* Varsayılan (desktop) – 5 kolon: Edu | sep | Contact | sep | Exp */
+/* Edu | sep | Contact | sep | Exp */
 .main-columns.grid-desktop {
   display: grid;
   grid-template-columns:
@@ -83,7 +83,6 @@
   align-items: start;
 }
 
-/* Tablet’te de yan yana, ama daha sıkı boşluk */
 .main-columns.grid-tablet {
   display: grid;
   grid-template-columns:
@@ -95,7 +94,6 @@
   column-gap: clamp(16px, 3vw, 28px);
 }
 
-/* Mobilde tek sütun (istersen yine yan yana bırakabilirsin) */
 .main-columns.grid-mobile {
   display: grid;
   grid-template-columns: 1fr;

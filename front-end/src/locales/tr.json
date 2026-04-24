@@ -1,11 +1,52 @@
 {
   "navBar": {
-    "title": "Home",
+    "home": "Ana Sayfa",
     "ai": "AI",
-    "projects": "Projects",
-    "contact": "Contact",
-    "login": "Login",
-    "language": "Language"
+    "projects": "Projeler",
+    "login": "Giriş Yap",
+    "language": "Dil"
+  },
+
+  "home": {
+    "title": "Merhaba, ben Berkay Öner 👋",
+    "description": "I graduated from Üsküdar University as a Software Engineer. I started my first full-time IT job at Çelebi Aviation Holding in May 2024. I focus on developing software projects and managing IT processes. I am a social person who likes to collaborate with my colleagues. I provide support for the agreement, inventory and full-stack software development processes of the department I work in, and I was also solely responsible for the budget and payment processes in my IT department. In addition to standard software development processes, I try to benefit all IT processes by taking more responsibility for management processes.",
+    "contact": "Contact Information",
+    "email": "Email",
+    "linkedIn": "LinkedIn",
+    "linkedInLink": "Click Here",
+
+
+    "education": "Education",
+
+    "educationItem1": "Maltepe University",
+    "educationItem1Description": "Computer Programming",
+    "educationItem1Year": "2020 - 2022",
+
+    "educationItem2": "Üsküdar University",
+    "educationItem2Description": "Software Engineering",
+    "educationItem2Year": "2022 - 2024",
+
+
+    "experiences": "Experiences",
+
+    "experienceItem1": "Maltepe University - IT Intern",
+    "experienceItem1Year": "July 2020 - August 2022",
+    "experienceItem1Location": "Maltepe, Istanbul, Turkey",
+    "experienceItem1Description": "The internship I did at the school during the summer at the end of my first year at university. A comprehensive document preparation project about the C++ programming language.",
+
+    "experienceItem2": "Akbank - IT Intern",
+    "experienceItem2Year": "July 2023 - July 2023",
+    "experienceItem2Location": "Kocaeli, Turkey",
+    "experienceItem2Description": "I took part in a winter internship that lasted 10 working days in the Commercial Credit Technologies department where I helped the developments in ASP.NET front-end.\n\nFront-end: ASP.Net\nSource Code Management: Azure DevOps",
+
+    "experienceItem3": "Akbank - IT Intern",
+    "experienceItem3Year": "2023 July - 2023 September",
+    "experienceItem3Location": "Beşiktaş, Istanbul, Turkey",
+    "experienceItem3Description": "An internship period lasting 45 working days in Payment Systems Technologies which I took part in projects focused on C#, Oracle database studies and micro services on back-end.\n\n* I was responsible for creating back-end microservice structures.\n\n* I optimized the project by creating base class structures and eliminating repetitive code usage.\n\nBack-end: C# .Net\nDB: SQL for Oracle\nSource Code Management: Azure DevOps\nContainer: Docker",
+
+    "experienceItem4": "Çelebi Aviation Holding - IT Management Assistant",
+    "experienceItem4Year": "2024 May - 2025 May",
+    "experienceItem4Location": "Ümraniye, Istanbul, Turkey",
+    "experienceItem4Description": "I was working on Full-Stack React.Js - Java Spring Boot Web Development, inventory and budget management, IT payment management. In this company, I was very involved in management as well as software. Some of the work I have done in this company is as follows:\n\n* I prepared a React.js and Java Spring Boot web application from scratch to be used for authorization and control of the Çelebi Contact mobile application.\n\n* I developed certain screens as full-stack (React.js and Java Spring Boot) for the Ikarus Web project, which is Çelebi's largest software project.\n\n* I coded mobile responsiveness compatibility from scratch for the entire front-end project so that the Ikarus web project can be used on mobile phone/tablet browsers.\n\n* I was solely responsible for the payment processes of the devices and services purchased by the entire IT department. I was also responsible for the contract processes and agreements.\n\nFront-end: React.js\nBack-end: Java - Spring Boot\nDB: SQL for Oracle\nHibernate: Framework for ORM\nSource Code Management: GitLab"
   }
-  
 }

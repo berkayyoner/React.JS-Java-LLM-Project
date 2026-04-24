@@ -12,6 +12,7 @@ function Home() {
 
   const mailHref = `mailto:${config.email}`;
 
+  const isDesktop = up("lg");
   const columnsClass = up("lg")
     ? "grid-desktop"
     : between("md", "lg")
@@ -53,6 +54,7 @@ function Home() {
           </section>
 
           <div className="vertical-line" aria-hidden="true" />
+          { isDesktop ? null : <div className="horizontal-line" />}
 
           <section className="contact-column">
             <h2 className="title">{translate(lang, "home.contact")}</h2>
@@ -83,6 +85,7 @@ function Home() {
           </section>
 
           <div className="vertical-line" aria-hidden="true" />
+          { isDesktop ? null : <div className="horizontal-line" />}
 
           <section className="experiences-column">
             <h2 className="title">{translate(lang, "home.experiences")}</h2>
