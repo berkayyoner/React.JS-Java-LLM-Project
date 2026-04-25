@@ -1,136 +1,67 @@
+import React, { useState } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import { translate } from "../../utils/translate";
 import image from "../../assets/images/profile.png";
 import "./Home.css";
 import useLanguage from "../../hooks/useLanguage";
-import useResponsive from "../../hooks/useResponsive";
-import config from "../../config.json";
 
 function Home() {
-  const { lang } = useLanguage();  
-  const { up, between } = useResponsive();
+  const { lang } = useLanguage();
+  const [messages, setMessages] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
-  const mailHref = `mailto:${config.email}`;
-
-  const isDesktop = up("lg");
-  const columnsClass = up("lg")
-    ? "grid-desktop"
-    : between("md", "lg")
-    ? "grid-tablet"
-    : "grid-mobile";
+  const handleSend = () => {
+    if (!inputValue.trim()) return;
+    setMessages([...messages, { text: inputValue, sender: "user" }]);
+    setInputValue("");
+  };
 
   return (
-    <div className="home">
+    <div className="home-container">
       <NavBar selectedButton="home" />
+      
+      <main className="hero-section">
+        {/* Picture is on the background */}
+        <div className="profile-background-wrapper">
+          <img src={image} alt="Berkay Öner" className="full-height-profile-bg" />
+        </div>
 
-      <div className="cv">
-        <div className="top-section">
-          <img src={image} alt="Profile" className="profile-pic" />
+        {/* Content Layer - Sitting on the Image */}
+        <div className="overlay-content">
+          <header className="greeting-header">
+            <div className="title-wrapper">
+              <h1 className="hero-title">{translate(lang, "home.title")}</h1>
+            </div>
+            <p className="hero-subtitle">
+              {translate(lang, "home.description")}
+            </p>
+          </header>
 
-          <div className="hero-copy">
-            <h1 className="title">{translate(lang, "home.title")}</h1>
-            <p className="description">{translate(lang, "home.description")}</p>
+          <div className="chat-container">
+            <div className="chat-messages">
+              {messages.length === 0 && (
+                <p className="chat-placeholder">{translate(lang, "home.chatPlaceholder")}</p>
+              )}
+              {messages.map((msg, index) => (
+                <div key={index} className={`message ${msg.sender}`}>
+                  {msg.text}
+                </div>
+              ))}
+            </div>
+            
+            <div className="chat-input-area">
+              <input 
+                type="text" 
+                placeholder={translate(lang, "home.messagePlaceholder")}
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+              />
+              <button onClick={handleSend} className="send-btn">{translate(lang, "home.sendButton")}</button>
+            </div>
           </div>
         </div>
-
-        <div className="horizontal-line" />
-
-        <div className={`main-columns ${columnsClass}`}>
-          <section className="education-column">
-            <h2 className="title">{translate(lang, "home.education")}</h2>
-            <br/>
-            <ul className="list">
-              <li className="education-list-item">
-                <h3 className="title">{translate(lang, "home.educationItem2")}</h3>
-                <p>{translate(lang, "home.educationItem2Description")}</p>
-                <p>{translate(lang, "home.educationItem2Year")}</p>
-              </li>
-              <li className="education-list-item">
-                <h3 className="title">{translate(lang, "home.educationItem1")}</h3>
-                <p>{translate(lang, "home.educationItem1Description")}</p>
-                <p>{translate(lang, "home.educationItem1Year")}</p>
-              </li>
-            </ul>
-          </section>
-
-          <div className="vertical-line" aria-hidden="true" />
-          { isDesktop ? null : <div className="horizontal-line" />}
-
-          <section className="contact-column">
-            <h2 className="title">{translate(lang, "home.contact")}</h2>
-            <div className="contact-section">
-              <br/>
-
-              <div className="contact-item">
-                <h3 className="title">{translate(lang, "home.email")}</h3>
-                <a href={mailHref} className="link">
-                  {config.email}
-                </a>
-              </div>
-
-              <br/>
-
-              <div className="contact-item">
-                <h3 className="title">{translate(lang, "home.linkedIn")}</h3>
-                <a
-                  href={config.linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link"
-                >
-                  {translate(lang, "home.linkedInLink")}
-                </a>
-              </div>
-            </div>
-          </section>
-
-          <div className="vertical-line" aria-hidden="true" />
-          { isDesktop ? null : <div className="horizontal-line" />}
-
-          <section className="experiences-column">
-            <h2 className="title">{translate(lang, "home.experiences")}</h2>
-            <br/>
-            <ul className="list">
-              <li className="sized-list-item">
-                <h3 className="title">{translate(lang, "home.experienceItem4")}</h3>
-                <p>{translate(lang, "home.experienceItem4Year")}</p>
-                <p>{translate(lang, "home.experienceItem4Location")}</p>
-                <p className="experience-description">
-                  {translate(lang, "home.experienceItem4Description")}
-                </p>
-              </li>
-
-              <li className="sized-list-item">
-                <h3 className="title">{translate(lang, "home.experienceItem3")}</h3>
-                <p>{translate(lang, "home.experienceItem3Year")}</p>
-                <p>{translate(lang, "home.experienceItem3Location")}</p>
-                <p className="experience-description">
-                  {translate(lang, "home.experienceItem3Description")}
-                </p>
-              </li>
-
-              <li className="sized-list-item">
-                <h3 className="title">{translate(lang, "home.experienceItem2")}</h3>
-                <p>{translate(lang, "home.experienceItem2Year")}</p>
-                <p>{translate(lang, "home.experienceItem2Location")}</p>
-                <p className="experience-description">
-                  {translate(lang, "home.experienceItem2Description")}
-                </p>
-              </li>
-
-              <li className="sized-list-item">
-                <h3 className="title">{translate(lang, "home.experienceItem1")}</h3>
-                <p>{translate(lang, "home.experienceItem1Year")}</p>
-                <p>{translate(lang, "home.experienceItem1Location")}</p>
-                <p className="experience-description">
-                  {translate(lang, "home.experienceItem1Description")}
-                </p>
-              </li>
-            </ul>
-          </section>
-
-        </div>
-      </div>
+      </main>
     </div>
   );
 }

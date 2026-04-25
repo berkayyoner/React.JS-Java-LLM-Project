@@ -16,7 +16,7 @@ export default function useLanguage() {
     }
 
     // 2. Browser language control
-    const browserLang = navigator.language.slice(0, 2); // örn: "tr-TR" → "tr"
+    const browserLang = navigator.language.slice(0, 2); // Example: "tr-TR" → "tr"
     if (SUPPORTED_LANGS.includes(browserLang)) {
       setLang(browserLang);
       localStorage.setItem("lang", browserLang);

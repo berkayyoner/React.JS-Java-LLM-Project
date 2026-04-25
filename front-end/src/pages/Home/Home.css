@@ -1,157 +1,138 @@
-.cv {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: clamp(24px, 4vw, 48px) clamp(16px, 3vw, 32px);
+.home-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, 3vw, 32px);
-  text-align: center;           
-  white-space: pre-wrap;
+  overflow: hidden;
+  background-color: #0a0a0a;
 }
 
-.title { color: #fff; margin: 0 0 .35rem; }
-.description { 
-  max-width: 68ch; 
+.hero-section {
+  position: relative;
+  flex: 1;
   width: 100%;
-  margin: 0 auto;               
 }
 
-.top-section {
+/* Resim Arka Planda ve Solda Sabit */
+.profile-background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr; 
-  align-items: center;
-  justify-content: center;
-  gap: clamp(16px, 3vw, 40px);
+  height: 100%;
+  z-index: 1;
+  pointer-events: none; 
 }
 
-.profile-pic {
-  width: clamp(160px, 22vw, 280px);   
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
+.full-height-profile-bg {
+  height: 100%;
+  width: 45%; /* Resim ekranın sol kısmında kalır */
   object-fit: cover;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,.75), rgba(0,0,0,0));
-  transition: transform .3s ease;
-}
-.profile-pic:hover { transform: scale(1.1); transition: all 0.3s ease; }
-
-.hero-copy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;          
-  gap: 10px;
-}
-.hero-copy:hover { transform: scale(1.02); transition: all 0.3s ease; }
-
-.horizontal-line {
-  width: min(240px, 40%);
-  height: 2px;
-  background-color: #ffffff;
-  margin: 12px auto 24px;
-  opacity: .8;
+  opacity: 0.6;
+  mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
 }
 
-.main-columns {
-  max-width: 1280px;
-  width: min(92vw, 1280px);
-  margin: 0 auto;
-
-  display: grid;
-
-  /* education | sep | contact | sep | experiences */
-  grid-template-columns:
-    minmax(220px, 1fr)   /* Education */
-    1px                 
-    minmax(260px, 1fr)   /* Contact */
-    1px                 
-    minmax(380px, 1.2fr) /* Experiences */;
-
-  column-gap: clamp(24px, 4vw, 48px);
-  align-items: start;
-}
-
-/* Edu | sep | Contact | sep | Exp */
-.main-columns.grid-desktop {
-  display: grid;
-  grid-template-columns:
-    minmax(220px, 1fr)
-    1px
-    minmax(260px, 1fr)
-    1px
-    minmax(380px, 1.2fr);
-  column-gap: clamp(24px, 4vw, 48px);
-  align-items: start;
-}
-
-.main-columns.grid-tablet {
-  display: grid;
-  grid-template-columns:
-    minmax(200px, 1fr)
-    1px
-    minmax(220px, 1fr)
-    1px
-    minmax(320px, 1.1fr);
-  column-gap: clamp(16px, 3vw, 28px);
-}
-
-.main-columns.grid-mobile {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 20px;
-}
-
-
-.vertical-line {
-  width: 1px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0));
-  align-self: stretch;
-  justify-self: center;
-  opacity: .9;
-}
-
-.education-column,
-.contact-column,
-.experiences-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  list-style: none;
-  margin: 0; padding: 0;
-}
-
-.sized-list-item {
+/* Üst Katman: İçerikleri Ortalar */
+.overlay-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
   width: 100%;
-  max-width: 65ch;
-  margin: 0 auto; 
-}
-.sized-list-item:hover { transform: scale(1.02); transition: all 0.3s ease; }
-.education-list-item:hover { transform: scale(1.08); transition: all 0.3s ease; }
-
-.experience-description {
-  text-align: left;
-  color: #b6b6b6;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Yatayda ortalar */
+  justify-content: center; /* Dikeyde ortalar */
+  text-align: center;
+  padding: 20px;
 }
 
-.contact-item:hover {
-  transform: scale(1.08);
-  transition: all 0.2s ease;
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.link { color: #b6b6b6; text-decoration: none; }
-.link:hover { color: #fff; }
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #fff;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-out;
+  display: inline-block; /* Merkezden büyüme için */
+  cursor: default;
+}
 
-@media (max-width: 900px) {
-  .main-columns {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
-  }
-  .vertical-line { display: none; }
+.hero-title:hover {
+  transform: scale(1.05); /* Sağa kaymadan merkezden büyür */
+}
+
+.hero-subtitle {
+  color: #ccc;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+/* Chatbox Cam Efekti */
+.chat-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 550px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message.user {
+  align-self: flex-end;
+  background: #3b82f6;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 18px 18px 2px 18px;
+}
+
+.chat-input-area {
+  padding: 15px 20px;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chat-input-area input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  color: #fff;
+  border-radius: 12px;
+  outline: none;
+}
+
+.send-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.send-btn:hover {
+  background: #3b82f6;
+  color: #fff;
 }
