@@ -1,6 +1,7 @@
 .language-dropdown {
   position: relative;
   display: inline-block;
+  z-index: 9000;
 }
 
 .language-dropdown button {
