@@ -28,7 +28,12 @@ function LanguageDropdown({ lang, onChange }) {
               <div
                 key={code}
                 className="dropdown-item"
-                onClick={() => onChange(code)}
+                onClick={() => {
+                  onChange(code);
+                  setTimeout(() => {
+                    window.location.reload(); // Reload the page after the language change to apply translations
+                  }, 100);
+                }}
               >
                 <img src={flagMap[code]} alt={code} className="flag-icon" />
               </div>
