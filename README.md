@@ -17,7 +17,7 @@ This project includes my personal website server files made with React.Js, Java 
 4. Install JDK 21 for back-end project. (https://adoptium.net/en-GB/temurin/releases?version=21&os=any&arch=any)
 5. DBeaver is recomended for database connections.
 6. Edit config.json from front-end>src directory.
-7. Go to front-end project directory on Terminal or CMD by "cd [directory]" command. Run the frond-end project by "npm start" command.
+7. Go to front-end project directory on Terminal or CMD by "cd [directory]" command. Run the frond-end project by "npm run [environment name]" command.
 8. Install Maven and extract to C:/ directory. Add path to System Properties->Environment Variables as MAVEN_HOME → C:\apache-maven-version\bin.
 9. Go to back-end project directory on Terminal or CMD by "cd [directory]" command. Install dependancies by "mvnw clean install" command and run the back-end project by "mvnw spring-boot:run -Dspring-boot.run.profiles=dev" command.
 
