@@ -12,7 +12,7 @@
   width: 100%;
 }
 
-/* Resim Arka Planda ve Solda Sabit */
+/* Picture as Background and Fixed on the Left */
 .profile-background-wrapper {
   position: absolute;
   top: 0;
@@ -25,14 +25,20 @@
 
 .full-height-profile-bg {
   height: 100%;
-  width: 45%; /* Resim ekranın sol kısmında kalır */
+  width: 45%; /* Picture is on the left side */
   object-fit: cover;
   opacity: 0.6;
   mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
   -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
 }
 
-/* Üst Katman: İçerikleri Ortalar */
+.full-height-profile-bg:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Overlay Layer: Centers the Content */
 .overlay-content {
   position: relative;
   z-index: 2;
@@ -40,8 +46,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Yatayda ortalar */
-  justify-content: center; /* Dikeyde ortalar */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Vertical centering */
   text-align: center;
   padding: 20px;
 }
@@ -57,12 +63,12 @@
   color: #fff;
   margin-bottom: 10px;
   transition: transform 0.3s ease-out;
-  display: inline-block; /* Merkezden büyüme için */
+  display: inline-block; /* Centering from the middle */
   cursor: default;
 }
 
 .hero-title:hover {
-  transform: scale(1.05); /* Sağa kaymadan merkezden büyür */
+  transform: scale(1.05); /* Grows from the center without shifting to the right */
 }
 
 .hero-subtitle {
