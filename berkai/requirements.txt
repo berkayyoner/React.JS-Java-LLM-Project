@@ -1,0 +1,19 @@
+# Create a clean virtual environment
+python -m venv venv
+
+# Activate the environment
+# On Windows:
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\venv\Scripts\activate
+
+# Upgrade essential pip tools
+pip install --upgrade pip setuptools wheel
+
+# Install CPU-compatible PyTorch
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 --upgrade
+
+# Install LLM Training Suite
+pip install transformers datasets peft accelerate trl bitsandbytes notebook ipykernel
+
+# Now launch Jupyter from this specific terminal
+jupyter notebook
