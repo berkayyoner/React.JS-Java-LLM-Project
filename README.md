@@ -1,6 +1,8 @@
 # About This Project
 This project includes my personal website server files made with React.Js, Java Springboot and Python. Currently I'm working on developing my own LLM AI Chatbot for adding inside the project.
 
+https://i.imgur.com/GQYAybT.png
+
 ## Including
 * **Front-End:** React.Js (includes Axios and Redux)
 * **Back-End:** Java (Spring Boot, Hibernate and Maven)
