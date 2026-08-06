@@ -10,7 +10,7 @@ This project includes my personal website server files made with React.Js, Java 
 * **Service Test Tools:** Postman
 * **Web Test Tools:** Selenium
 * **Container:** Docker
-* **Data Transfer:** Redis
+* **Caching:** Redis
 
 ## Setups
 1. Install Node.Js for front-end project.
