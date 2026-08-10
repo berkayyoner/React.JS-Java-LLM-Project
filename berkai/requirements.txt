@@ -17,3 +17,6 @@ pip install transformers datasets peft accelerate trl bitsandbytes notebook ipyk
 
 # Now launch Jupyter from this specific terminal
 jupyter notebook
+
+# Run main.py with uvicorn
+uvicorn main:app --reload
