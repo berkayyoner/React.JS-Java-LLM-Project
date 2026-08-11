@@ -85,6 +85,12 @@
 				<enabled>false</enabled>
 			</releases>
 		</repository>
+		
+		<!-- Oracle Repository -->
+		<repository>
+		    <id>oracleRepo</id>
+		    <url>https://repo.spring.io/plugins-release/</url>
+		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
