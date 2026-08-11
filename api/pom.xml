@@ -58,6 +58,14 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- Oracle JDBC Driver -->
+		<dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc11</artifactId>
+		    <scope>runtime</scope>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
