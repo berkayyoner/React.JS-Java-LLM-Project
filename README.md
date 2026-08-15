@@ -8,13 +8,13 @@ Project is not made with help of an AI. You may use this project or components i
 ## Including
 * **Front-End:** React.Js (includes Axios and Redux)
 * **Back-End:** Java (Spring Boot, Hibernate and Maven)
-* **Database:** Oracle SQL  (files will be added)
-* **Service Test Tools:** Postman (files will be added)
-* **Web Test Tools:** Selenium (files will be added)
+* **Database:** Oracle SQL  *(files will be added)*
+* **Service Test Tools:** Postman *(files will be added)*
+* **Web Test Tools:** Selenium *(files will be added)*
 * **Container:** Docker
 * **Caching:** Redis
-* **Server Management:** Kubernates (files will be added)
-* **Deployment:** Jenkins (files will be added)
+* **Server Management:** Kubernates *(files will be added)*
+* **Deployment:** Jenkins *(files will be added)*
 
 ## Setups
 1. Install Node.Js for front-end project.
